@@ -96,11 +96,13 @@ public class Node {
 
         passenger.setID(faker.idNumber().ssnValid());
 
-        //@TODO add flightNo generator
+        //TODO add flightNo generator
 
         passenger.setPriority(rand.nextInt(6)+1);
 
-        //@TODO Modify Priority generator, needs to take into acount previous priorities generated
+        /*@todo words*/
+
+        //TODO Modify Priority generator, needs to take into acount previous priorities generated
 
         setPassenger(passenger);
         
