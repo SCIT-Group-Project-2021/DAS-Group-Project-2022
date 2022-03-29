@@ -28,4 +28,4 @@ priority 1 individuals)
 6. Process the list by generating a random number between 3 and 5 that will indicate how many persons to 
 remove from the list. Persons are removed from the front of the list and the state of the list is to printed at 
 each interval with an appropriate message to indicate the passage of time. The program should terminate 
-when the list is empty
+when the list is empty.
