@@ -57,11 +57,7 @@ public class Node {
         Passenger passenger = new Passenger();
 
         //#region Passenger Generation
-        passenger.setIdNum(passenger.generateID());
-        passenger.setName(passenger.generateName());
-        passenger.setGender(passenger.generateGender());
-        passenger.setFlightNum(passenger.generateFlightNo());
-        passenger.setPriority(passenger.generatePriority());
+        
         //#endregion
         
         //TODO Test Passenger Generation Code
