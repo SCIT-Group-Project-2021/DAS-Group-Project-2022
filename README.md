@@ -2,11 +2,11 @@
 You have been contracted to develop a prototype system for the Norman Manley Airport that will assist the airline 
 staff in processing persons who have checked in for their flights during the covid pandemic. The information is
 stored for each person are as follows:
-1. ID#
-2. Name
-3. Gender
-4. FlightNo
-5. Priority
+  1. ID#
+  2. Name
+  3. Gender
+  4. FlightNo
+  5. Priority
 There is no way of determining the number of persons who will check in daily, so your solution should implement 
 an appropriate data structure that can handle this level of uncertainty. Each person has a Priority Level of either
 1 or 2 that will indicate the urgency at which they are processed – with 1 being the most urgent.
@@ -21,10 +21,10 @@ newline.
 priority 1 individuals)
 4. Display the list to ensure that the order of arrival and priority levels are being maintained. 
 5. Produce the following reports from the list:
-1. Number of level 1 males on each flight
-2. Number of level 1 females on each flight
-3. Number of level 2 males on each flight
-4. Number of level 2 females on each flight
+  1. Number of level 1 males on each flight
+  2. Number of level 1 females on each flight
+  3. Number of level 2 males on each flight
+  4. Number of level 2 females on each flight
 6. Process the list by generating a random number between 3 and 5 that will indicate how many persons to 
 remove from the list. Persons are removed from the front of the list and the state of the list is to printed at 
 each interval with an appropriate message to indicate the passage of time. The program should terminate 
