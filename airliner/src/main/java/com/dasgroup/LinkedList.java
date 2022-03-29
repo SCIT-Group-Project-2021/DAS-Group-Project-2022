@@ -41,9 +41,9 @@ public class LinkedList {
 
         temp.setArrivaltime(String.format("%02d",rand.nextInt(12)+1) + ":" + String.format("%02d",rand.nextInt(60)));
 
-        //TODO Add arrival time generator
+        //#TODO Add arrival time generator
 
-        //TODO Add priority sorter
+        //#TODO Add priority sorter
 
         if (Head != null) {
 
