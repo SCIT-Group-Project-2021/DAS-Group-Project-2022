@@ -41,8 +41,6 @@ public class LinkedList {
 
         temp.setArrivalTime(rand.nextInt(3));
 
-        // TODO Limit arrival times to 6 per time group
-
         if (passengers < 16) {
 
             if (head != null) {
