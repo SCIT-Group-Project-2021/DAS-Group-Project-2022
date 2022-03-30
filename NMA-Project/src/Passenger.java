@@ -2,13 +2,14 @@ import java.util.Random;
 
 public class Passenger {
 
+    // #region Variables
     String idNum;
     String name;
     char gender;
     String flightNum;
     int priority;
-
     Random rand = new Random();
+    // #endregion
 
     public Passenger() {
     }
@@ -60,41 +61,48 @@ public class Passenger {
     public void setPriority(int priority) {
         this.priority = priority;
     }
-    
-    //toString format - [trn, name, gender, flight, priority].
+
     @Override
-    public String toString() { return
-        "[" + String.format("%10s", getIdNum()) + ", " + 
-        String.format("%-20s", getName()+", ") + 
-        getGender() + ", " + 
-        getFlightNum() +", " +
-        getPriority() + "]";}
-    
-    public String generateName(){
+    public String toString() {
+
+        // toString format - [trn, name, gender, flight, priority].
+        return "[" + String.format("%10s", getIdNum()) + ", " +
+                String.format("%-20s", getName() + ", ") +
+                getGender() + ", " +
+                getFlightNum() + ", " +
+                getPriority() + "]";
+
+    }
+
+    public String generateName() {
 
         String name = "M";
 
-        //TODO Make Generate Name Code
+        // TODO Make Generate Name Code
 
         return name;
     }
 
-    public String generateID(){
+    public String generateID() {
 
+        // Generates 9 digit value with fromat [000-000-000]
         String id;
 
-        id = String.format("%03d",rand.nextInt(999)+1) + "-" + String.format("%03d",rand.nextInt(999)+1) + "-" + String.format("%03d",rand.nextInt(999)+1);
+        id = String.format("%03d", rand.nextInt(999) + 1) + "-" + String.format("%03d", rand.nextInt(999) + 1) + "-"
+                + String.format("%03d", rand.nextInt(999) + 1);
 
         return id;
     }
-    
-    public char generateGender(){
+
+    public char generateGender() {
+
         String setOfCharacters = "MF";
 
         int randomInt = rand.nextInt(2);
         char gender = setOfCharacters.charAt(randomInt);
 
         return gender;
+
     }
 
     public String generateFlightNo() {
@@ -106,15 +114,17 @@ public class Passenger {
         flightNo = flightNo + String.format("%04d", rand.nextInt(5000));
 
         return flightNo;
+
     }
 
-    public int generatePriority(){
+    public int generatePriority() {
 
         int priority;
 
-        priority = rand.nextInt(2)+1;
+        priority = rand.nextInt(2) + 1;
 
         return priority;
+
     }
-    
+
 }

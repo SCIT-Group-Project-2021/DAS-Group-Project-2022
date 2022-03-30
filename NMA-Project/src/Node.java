@@ -1,10 +1,11 @@
 public class Node {
 
+    // #region Variables
     private Passenger passenger;
     private Node nextNode;
     private Node prevNode;
     private int arrivalTime;
-
+    // #endregion
 
     public Node() {
     }
@@ -56,16 +57,16 @@ public class Node {
 
         Passenger passenger = new Passenger();
 
-        //#region Passenger Generation
+        // #region Passenger Generation
         passenger.setIdNum(passenger.generateID());
         passenger.setName(passenger.generateName());
         passenger.setGender(passenger.generateGender());
         passenger.setFlightNum(passenger.generateFlightNo());
         passenger.setPriority(passenger.generatePriority());
-        //#endregion
-        
+        // #endregion
+
         setPassenger(passenger);
-        
+
     }
-    
+
 }

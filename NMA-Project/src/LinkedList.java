@@ -2,10 +2,11 @@ import java.util.Random;
 
 public class LinkedList {
 
+    // #region Variables
     private Node head;
     private Node tail;
     private int passengers;
-
+    // #endregion
 
     public LinkedList() {
     }
@@ -47,23 +48,37 @@ public class LinkedList {
             if (head != null) {
 
                 tail.setNextNode(temp);
-    
+
                 temp.setPrevNode(tail);
-    
+
                 tail = temp;
-    
+
             } else {
-    
+
                 setHead(temp);
-    
+
                 tail = head;
-    
+
             }
 
             passengers++;
-            
-        }else{
+
+        } else {
             System.out.println("Total number of passengers exceeds limit" + "\n" + "Canceling operation");
+        }
+
+    }
+
+    public void printList() {
+
+        Node temp = head;
+
+        while (temp != null) {
+
+            System.out.println(temp.getPassenger());
+
+            temp = temp.getNextNode();
+
         }
 
     }
