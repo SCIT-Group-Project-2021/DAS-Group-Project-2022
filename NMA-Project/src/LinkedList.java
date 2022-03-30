@@ -4,17 +4,15 @@ public class LinkedList {
 
     private Node head;
     private Node tail;
-    private Node current;
     private int passengers;
 
 
     public LinkedList() {
     }
 
-    public LinkedList(Node head, Node tail, Node current) {
+    public LinkedList(Node head, Node tail) {
         this.head = head;
         this.tail = tail;
-        this.current = current;
     }
 
     public Node getHead() {
@@ -33,38 +31,6 @@ public class LinkedList {
         this.tail = tail;
     }
 
-    public Node getCurrent() {
-        return this.current;
-    }
-
-    public void setCurrent(Node current) {
-        this.current = current;
-    }
-
-    public LinkedList head(Node head) {
-        setHead(head);
-        return this;
-    }
-
-    public LinkedList tail(Node tail) {
-        setTail(tail);
-        return this;
-    }
-
-    public LinkedList current(Node current) {
-        setCurrent(current);
-        return this;
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-                " head='" + getHead() + "'" +
-                ", tail='" + getTail() + "'" +
-                ", current='" + getCurrent() + "'" +
-                "}";
-    }
-
     public void generateNode() {
 
         Node temp = new Node();
@@ -75,22 +41,22 @@ public class LinkedList {
         temp.setArrivalTime(rand.nextInt(3));
 
         // TODO Limit arrival times to 6 per time group
-        
+
         if (passengers < 16) {
 
             if (head != null) {
 
-                current.setNextNode(temp);
+                tail.setNextNode(temp);
     
-                temp.setPrevNode(current);
+                temp.setPrevNode(tail);
     
-                current = temp;
+                tail = temp;
     
             } else {
     
                 setHead(temp);
     
-                current = head;
+                tail = head;
     
             }
 

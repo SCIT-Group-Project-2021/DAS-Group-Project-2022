@@ -4,14 +4,14 @@ public class App {
         int pri1females = 0;
         int pri2males = 0;
         int pri2females = 0;
-
         LinkedList arrivals = new LinkedList();
+        Node temp;
 
         for (int i = 0; i < 25; i++) {
             arrivals.generateNode();
         }
 
-        Node temp = arrivals.getHead();
+        temp = arrivals.getHead();
 
         while (temp.getNextNode() != null) {
 
