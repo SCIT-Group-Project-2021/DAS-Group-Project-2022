@@ -8,6 +8,8 @@ public class Passenger {
     String flightNum;
     int priority;
 
+    Random rand = new Random();
+
     public Passenger() {
     }
 
@@ -58,17 +60,16 @@ public class Passenger {
     public void setPriority(int priority) {
         this.priority = priority;
     }
-
+    
+    //toString format - [trn, name, gender, flight, priority].
     @Override
-    public String toString() {
-        return
-            "idNum = " + String.format("%10s", getIdNum()) + " " +
-            "name = " + String.format("%-20s", getName()) + " " +
-            "gender = " + getGender() + " " +
-            "flightNum = " + getFlightNum() + " " +
-            "priority = " + getPriority() + " ";
-    }
-
+    public String toString() { return
+        "[" + String.format("%10s", getIdNum()) + ", " + 
+        String.format("%-20s", getName()+", ") + 
+        getGender() + ", " + 
+        getFlightNum() +", " +
+        getPriority() + "]";}
+    
     public String generateName(){
 
         String name = "M";
@@ -82,42 +83,36 @@ public class Passenger {
 
         String id;
 
-        Random rand = new Random();
-
-        id = String.format("%09d",rand.nextInt(999999998)+1);
-
-        //TODO Make Generate ID number Code
+        id = String.format("%03d",rand.nextInt(999)+1) + "-" + String.format("%03d",rand.nextInt(999)+1) + "-" + String.format("%03d",rand.nextInt(999)+1);
 
         return id;
     }
-
+    
     public char generateGender(){
+        String setOfCharacters = "MF";
 
-        char gender = 'M';
-
-        //TODO Make Generate Gender Code as well as remove default Gender
+        int randomInt = rand.nextInt(2);
+        char gender = setOfCharacters.charAt(randomInt);
 
         return gender;
     }
 
-    public String generateFlightNo(){
+    public String generateFlightNo() {
 
-        String flightNo = "M";
+        Random rand = new Random();
 
-        //TODO Make Generate Flight number Code
+        String flightNo = "";
+        flightNo = flightNo + (char) (rand.nextInt('Z' - 'A') + 'A') + (char) (rand.nextInt('Z' - 'A') + 'A');
+        flightNo = flightNo + String.format("%04d", rand.nextInt(5000));
 
         return flightNo;
     }
 
     public int generatePriority(){
 
-        int priority  = 0;
-
-        Random rand = new Random();
+        int priority;
 
         priority = rand.nextInt(2)+1;
-       
-        //TODO Make Generate Priority Code
 
         return priority;
     }
