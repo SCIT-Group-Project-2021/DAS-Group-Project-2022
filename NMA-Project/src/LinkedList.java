@@ -5,6 +5,8 @@ public class LinkedList {
     private Node head;
     private Node tail;
     private Node current;
+    private int passengers;
+
 
     public LinkedList() {
     }
@@ -73,22 +75,29 @@ public class LinkedList {
         temp.setArrivalTime(rand.nextInt(3));
 
         // TODO Limit arrival times to 6 per time group
-        // TODO Limit number of total Nodes that can be generated to 18
+        
+        if (passengers < 16) {
 
-        if (head != null) {
+            if (head != null) {
 
-            current.setNextNode(temp);
+                current.setNextNode(temp);
+    
+                temp.setPrevNode(current);
+    
+                current = temp;
+    
+            } else {
+    
+                setHead(temp);
+    
+                current = head;
+    
+            }
 
-            temp.setPrevNode(current);
-
-            current = temp;
-
-        } else {
-
-            setHead(temp);
-
-            current = head;
-
+            passengers++;
+            
+        }else{
+            System.out.println("Total number of passengers exceeds limit" + "\n" + "Canceling operation");
         }
 
     }

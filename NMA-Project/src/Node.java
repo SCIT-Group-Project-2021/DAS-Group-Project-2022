@@ -64,8 +64,6 @@ public class Node {
         passenger.setPriority(passenger.generatePriority());
         //#endregion
         
-        //TODO Test Passenger Generation Code
-
         setPassenger(passenger);
         
     }

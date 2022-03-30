@@ -7,21 +7,21 @@ public class App {
 
         LinkedList arrivals = new LinkedList();
 
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < 25; i++) {
             arrivals.generateNode();
         }
 
-        arrivals.setCurrent(arrivals.getHead());
+        Node temp = arrivals.getHead();
 
-        while (arrivals.getCurrent().getNextNode() != null) {
+        while (temp.getNextNode() != null) {
 
-            System.out.println(arrivals.getCurrent().getPassenger());
+            System.out.println(temp.getPassenger());
 
-            arrivals.setCurrent(arrivals.getCurrent().getNextNode());
+            temp = temp.getNextNode();
 
         }
         //  Stats Calculations
-        Node temp = arrivals.getHead();
+        temp = arrivals.getHead();
         while(temp!=null) {
             if(temp.getPassenger().getPriority() == 1 && temp.getPassenger().getGender() =='M'){
                 pri1males++;
