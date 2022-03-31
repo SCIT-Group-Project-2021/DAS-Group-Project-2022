@@ -74,6 +74,14 @@ public class Passenger {
 
     }
 
+    /* 
+        public String toString()
+        {
+            return "[" + getIdNum() + ", " + getName() + ", " + getGender() + ", " +
+                getFlightNum() + ", " + getPriority() + "]";
+        }
+    */
+
     public String generateName() {
 
         String name = "M";
@@ -85,7 +93,7 @@ public class Passenger {
 
     public String generateID() {
 
-        // Generates 9 digit value with fromat [000-000-000]
+        // Generates 9 digit value with format [000-000-000]
         String id;
 
         id = String.format("%03d", rand.nextInt(999) + 1) + "-" + String.format("%03d", rand.nextInt(999) + 1) + "-"
@@ -93,6 +101,18 @@ public class Passenger {
 
         return id;
     }
+
+    /*
+        public String generateID()
+        {
+            Random rand = new Random();
+
+            int id = rand.nextInt(999999999);
+
+            return String.format("%09d", id);
+        }
+    */
+
 
     public char generateGender() {
 
