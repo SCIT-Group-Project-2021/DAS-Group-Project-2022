@@ -84,10 +84,21 @@ public class Passenger {
 
     public String generateName() {
 
-        String name = "M";
+        //region Name Array- has an Array of 20 first names, and another array of 7 last names
+        String[] firstNames=
+        {"Lean", "Ash", "Dev", "Lea",
+         "Daniel", "Charlie", "Dorian", "Fran",
+         "Chris", "Jean", "Jordan", "Kelly",
+         "Leslie", "Lou", "Mickey", "Noel",
+         "Shelly", "Vinnie", "Taylor", "Terry"};
 
-        // TODO Make Generate Name Code
+        String[] lastNames= {"Brown", "Black", "Smith", "Clarke",
+                     "Wint", "Charles", "Johnson"};
+        //endregion
 
+        Random choose = new Random();
+        String name = "" + firstNames[choose.nextInt(20)]+ " " + lastNames[choose.nextInt(7)];
+        
         return name;
     }
 

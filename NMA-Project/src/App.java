@@ -11,20 +11,46 @@ public class App {
         LinkedList arrivals = new LinkedList();
         Random rand = new Random();
         Node temp;
+        
         // #endregion
 
         // #region Passenger Generation
+
         for (int i = 0; i < 3; i++) {
-            for (int g = 0; g < (rand.nextInt(6) + 1); g++) {
-                arrivals.generateNode();
-                arrivals.getTail().setArrivalTime(i);
+            Node list;
+
+            if (arrivals.getTail() != null) {
+
+                list = arrivals.getTail();
+            
+            // #region set printList to start from tail of last set for accurate printing
+                for (int g = 0; g < (rand.nextInt(6) + 1); g++) {
+
+                    arrivals.generateNode();
+                    arrivals.getTail().setArrivalTime(i);
+                }
+                list = list.getNextNode();
+
             }
+            // #endregion
+
+            // #region set printList arrivals to start from head for accurate report
+            else {
+                for (int g = 0; g < (rand.nextInt(6) + 1); g++) {
+
+                    arrivals.generateNode();
+                    arrivals.getTail().setArrivalTime(i);
+                }
+                list = arrivals.getHead();
+            }
+            // #endregion
+            
             System.out.println("Time: " + i);
-            arrivals.printList();
+            arrivals.printList(list);
         }
         // #endregion
 
-        // #region Stats Calculation
+        // #region Final Report Calculation
         temp = arrivals.getHead();
         while (temp != null) {
             if (temp.getPassenger().getPriority() == 1 && temp.getPassenger().getGender() == 'M') {
