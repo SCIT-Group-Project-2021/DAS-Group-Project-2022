@@ -73,38 +73,38 @@ public class Passenger {
                 getPriority() + "]";
 
     }
-    /* 
-        public String toString()
-        {
-            return "[" + getIdNum() + ", " + getName() + ", " + getGender() + ", " +
-                getFlightNum() + ", " + getPriority() + "]";
-        }
-    */
+    /*
+     * public String toString()
+     * {
+     * return "[" + getIdNum() + ", " + getName() + ", " + getGender() + ", " +
+     * getFlightNum() + ", " + getPriority() + "]";
+     * }
+     */
 
-    /* 
-        public String toString()
-        {
-            return "[" + getIdNum() + ", " + getName() + ", " + getGender() + ", " +
-                getFlightNum() + ", " + getPriority() + "]";
-        }
-    */
+    /*
+     * public String toString()
+     * {
+     * return "[" + getIdNum() + ", " + getName() + ", " + getGender() + ", " +
+     * getFlightNum() + ", " + getPriority() + "]";
+     * }
+     */
 
     public String generateName() {
 
-        //region Name Array- has an Array of 20 first names, and another array of 7 last names
-        String[] firstNames=
-        {"Lean", "Ash", "Dev", "Lea",
-         "Daniel", "Charlie", "Dorian", "Fran",
-         "Chris", "Jean", "Jordan", "Kelly",
-         "Leslie", "Lou", "Mickey", "Noel",
-         "Shelly", "Vinnie", "Taylor", "Terry"};
+        // region Name Array- has an Array of 20 first names, and another array of 7
+        // last names
+        String[] firstNames = { "Lean", "Ash", "Dev", "Lea",
+                "Daniel", "Charlie", "Dorian", "Fran",
+                "Chris", "Jean", "Jordan", "Kelly",
+                "Leslie", "Lou", "Mickey", "Noel",
+                "Shelly", "Vinnie", "Taylor", "Terry" };
 
-        String[] lastNames= {"Brown", "Black", "Smith", "Clarke",
-                     "Wint", "Charles", "Johnson", "Deans", "Bromfield", "Larmond", "Garcia"};
-        //endregion
+        String[] lastNames = { "Brown", "Black", "Smith", "Clarke",
+                "Wint", "Charles", "Johnson", "Deans", "Bromfield", "Larmond", "Garcia" };
+        // endregion
 
-        String name = "" + firstNames[rand.nextInt(20)]+ " " + lastNames[rand.nextInt(10)];
-        
+        String name = "" + firstNames[rand.nextInt(20)] + " " + lastNames[rand.nextInt(10)];
+
         return name;
     }
 
@@ -120,20 +120,16 @@ public class Passenger {
     }
 
     /*
-        public String generateID()
-        {
-            Random rand = new Random();
+     * public String generateID()
+     * {
+     * Random rand = new Random();
+     * 
+     * int id = rand.nextInt(999999999);
+     * 
+     * return String.format("%09d", id);
+     * }
+     */
 
-            int id = rand.nextInt(999999999);
-
-            return String.format("%09d", id);
-        }
-    */
-
-<<<<<<< HEAD
-=======
-
->>>>>>> fd7baf02887aed622755706182b16ac990a8b06a
     public char generateGender() {
 
         String setOfCharacters = "MF";
