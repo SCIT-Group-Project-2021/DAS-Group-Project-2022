@@ -81,6 +81,14 @@ public class Passenger {
         }
     */
 
+    /* 
+        public String toString()
+        {
+            return "[" + getIdNum() + ", " + getName() + ", " + getGender() + ", " +
+                getFlightNum() + ", " + getPriority() + "]";
+        }
+    */
+
     public String generateName() {
 
         //region Name Array- has an Array of 20 first names, and another array of 7 last names
@@ -122,6 +130,10 @@ public class Passenger {
         }
     */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fd7baf02887aed622755706182b16ac990a8b06a
     public char generateGender() {
 
         String setOfCharacters = "MF";
