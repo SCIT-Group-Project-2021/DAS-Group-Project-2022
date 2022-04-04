@@ -65,12 +65,16 @@ public class App {
         // #region Remove Nodes
 
         while (arrivals.getHead() != null) {
+
+            System.out.println("\nRemoved set\n");
+
             int removeInt = rand.nextInt(3) + 3;
             for (int i = 0; i < removeInt; i++) {
                 arrivals.removeNode(arrivals.getHead());
             }
 
-            System.out.println("\nRemoved set\n");
+            System.out.println("\nRemaining Passengers:\n");
+            arrivals.printList();
 
         }
 
