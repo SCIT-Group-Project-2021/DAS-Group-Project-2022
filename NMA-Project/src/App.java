@@ -11,42 +11,21 @@ public class App {
         LinkedList arrivals = new LinkedList();
         Random rand = new Random();
         Node temp;
-        
+
         // #endregion
 
         // #region Passenger Generation
 
         for (int i = 0; i < 3; i++) {
-            Node list;
 
-            if (arrivals.getTail() != null) {
+            for (int g = 0; g < (rand.nextInt(6) + 1); g++) {
 
-                list = arrivals.getTail();
-            
-            // #region set printList to start from tail of last set for accurate printing
-                for (int g = 0; g < (rand.nextInt(6) + 1); g++) {
-
-                    arrivals.generateNode();
-                    arrivals.getTail().setArrivalTime(i);
-                }
-                list = list.getNextNode();
-
+                arrivals.generateNode();
+                arrivals.getTail().setArrivalTime(i);
             }
-            // #endregion
 
-            // #region set printList arrivals to start from head for accurate report
-            else {
-                for (int g = 0; g < (rand.nextInt(6) + 1); g++) {
-
-                    arrivals.generateNode();
-                    arrivals.getTail().setArrivalTime(i);
-                }
-                list = arrivals.getHead();
-            }
-            // #endregion
-            
-            System.out.println("Time: " + i);
-            arrivals.printList(list);
+            System.out.println("\nTime: " + i + "\n");
+            arrivals.printList();
         }
         // #endregion
 
@@ -65,8 +44,36 @@ public class App {
             temp = temp.getNextNode();
         }
 
-        System.out.println("\nNumber of level 1 males: " + pri1males + "\nNumber of level 1 females: " + pri1females
-                + "\nNumber of level 2 males: " + pri2males + "\nNumber of level 2 females: " + pri2females);
+        // #endregion
+
+        // #region Passenger Sorting
+
+        arrivals.prioritizeList(pri1females + pri1males);
+
+        System.out.println("\nSorted List: \n");
+        arrivals.printList();
+
+        // #endregion region
+
+        // #region Final Report Output
+        System.out.println("\nNumber of priority 1 males: " + pri1males + "\nNumber of priority 1 females: "
+                + pri1females
+                + "\nNumber of priority 2 males: " + pri2males + "\nNumber of priority 2 females: " + pri2females);
+
+        // #endregion
+
+        // #region Remove Nodes
+
+        while (arrivals.getHead() != null) {
+            int removeInt = rand.nextInt(3) + 3;
+            for (int i = 0; i < removeInt; i++) {
+                arrivals.removeNode(arrivals.getHead());
+            }
+
+            System.out.println("\nRemoved set\n");
+
+        }
+
         // #endregion
 
     }

@@ -73,6 +73,13 @@ public class Passenger {
                 getPriority() + "]";
 
     }
+    /* 
+        public String toString()
+        {
+            return "[" + getIdNum() + ", " + getName() + ", " + getGender() + ", " +
+                getFlightNum() + ", " + getPriority() + "]";
+        }
+    */
 
     public String generateName() {
 
@@ -85,18 +92,17 @@ public class Passenger {
          "Shelly", "Vinnie", "Taylor", "Terry"};
 
         String[] lastNames= {"Brown", "Black", "Smith", "Clarke",
-                     "Wint", "Charles", "Johnson"};
+                     "Wint", "Charles", "Johnson", "Deans", "Bromfield", "Larmond", "Garcia"};
         //endregion
 
-        Random choose = new Random();
-        String name = "" + firstNames[choose.nextInt(20)]+ " " + lastNames[choose.nextInt(7)];
+        String name = "" + firstNames[rand.nextInt(20)]+ " " + lastNames[rand.nextInt(10)];
         
         return name;
     }
 
     public String generateID() {
 
-        // Generates 9 digit value with fromat [000-000-000]
+        // Generates 9 digit value with format [000-000-000]
         String id;
 
         id = String.format("%03d", rand.nextInt(999) + 1) + "-" + String.format("%03d", rand.nextInt(999) + 1) + "-"
@@ -104,6 +110,17 @@ public class Passenger {
 
         return id;
     }
+
+    /*
+        public String generateID()
+        {
+            Random rand = new Random();
+
+            int id = rand.nextInt(999999999);
+
+            return String.format("%09d", id);
+        }
+    */
 
     public char generateGender() {
 

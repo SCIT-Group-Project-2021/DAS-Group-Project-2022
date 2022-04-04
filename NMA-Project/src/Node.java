@@ -8,12 +8,23 @@ public class Node {
     // #endregion
 
     public Node() {
+        passenger = new Passenger();
+        nextNode = null;
+        prevNode = null;
+        arrivalTime = -1;
     }
 
     public Node(Passenger passenger, Node nextNode, Node prevNode) {
         this.passenger = passenger;
         this.nextNode = nextNode;
         this.prevNode = prevNode;
+    }
+
+    public Node(Node n){
+        passenger = n.passenger;
+        nextNode = n.nextNode;
+        prevNode = n.prevNode;
+        arrivalTime = n.arrivalTime;
     }
 
     public Passenger getPassenger() {
