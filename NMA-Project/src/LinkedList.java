@@ -16,6 +16,7 @@ public class LinkedList {
         this.tail = tail;
     }
 
+    // #region Getters and Setters
     public Node getHead() {
         return this.head;
     }
@@ -31,6 +32,8 @@ public class LinkedList {
     public void setTail(Node tail) {
         this.tail = tail;
     }
+
+    // #endregion
 
     public void generateNode() {
 

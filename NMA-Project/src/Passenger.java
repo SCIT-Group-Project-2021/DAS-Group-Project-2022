@@ -22,6 +22,7 @@ public class Passenger {
         this.priority = priority;
     }
 
+    // #region Getters and Setters
     public String getIdNum() {
         return this.idNum;
     }
@@ -61,6 +62,7 @@ public class Passenger {
     public void setPriority(int priority) {
         this.priority = priority;
     }
+    // #endregion
 
     @Override
     public String toString() {

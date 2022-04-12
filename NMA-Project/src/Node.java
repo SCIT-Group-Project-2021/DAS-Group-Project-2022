@@ -27,6 +27,7 @@ public class Node {
         arrivalTime = n.arrivalTime;
     }
 
+    // #region Getters and Setters
     public Passenger getPassenger() {
         return this.passenger;
     }
@@ -34,7 +35,7 @@ public class Node {
     public void setPassenger(Passenger passenger) {
         this.passenger = passenger;
     }
-
+    
     public Node getNextNode() {
         return this.nextNode;
     }
@@ -51,11 +52,6 @@ public class Node {
         this.prevNode = prevNode;
     }
 
-    public Node passenger(Passenger passenger) {
-        setPassenger(passenger);
-        return this;
-    }
-
     public int getArrivalTime() {
         return this.arrivalTime;
     }
@@ -63,6 +59,7 @@ public class Node {
     public void setArrivalTime(int arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
+    //#endregion
 
     public void generatePassenger() {
 
