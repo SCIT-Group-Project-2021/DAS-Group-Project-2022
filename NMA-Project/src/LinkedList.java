@@ -189,7 +189,7 @@ public class LinkedList {
                 head.getNextNode().setPrevNode(null);
             }
 
-            // Rempoves Current head from the list and reassigns the nextnode to e head
+            // Removes Current head from the list and reassigns the nextnode to e head
             head = head.getNextNode();
 
         }
