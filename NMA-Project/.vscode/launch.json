@@ -9,6 +9,20 @@
             "name": "Launch App",
             "request": "launch",
             "mainClass": "App",
+            "projectName": "NMA-Project-Copy_b4a16b05"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "NMA-Project_69b7d720"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
             "projectName": "NMA-Project_67a23a5e"
         }
     ]

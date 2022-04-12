@@ -71,9 +71,6 @@ public class LinkedList {
             // Adds new node to the end of the list
             tail.setNextNode(temp);
 
-            // Adds reference to the previous tail of the list
-            temp.setPrevNode(tail);
-
             // Sets new node to be the tail
             tail = temp;
 
@@ -103,6 +100,7 @@ public class LinkedList {
     }
 
     public void prioritizeList(int pri) {
+        Node prevNode = new Node();
 
         Node current = getHead();
         Node lastPri = null;
@@ -118,37 +116,20 @@ public class LinkedList {
 
         // Sorts passengers based on priority
         while (i < pri) {
-
+            prevNode = current;
             current = current.getNextNode();
 
             // Checks if the current passengers is priority 1
             if (current.getPassenger().getPriority() == 1) {
 
                 // sets previous nodes next node to be currents next node
-                // This statement won't be called if the node passed is equal to head
-                // So we don't have to check if getPrevNode() == null
-                current.getPrevNode().setNextNode(current.getNextNode());
+                prevNode.setNextNode(current.getNextNode());
 
-                // Checks if current has a next node
-                if (current.getNextNode() != null) {
-
-                    // Sets next nodes previous node to be currents previous node
-                    current.getNextNode().setPrevNode(current.getPrevNode());
-
-                }
 
                 // Checks if last priority node exsist
                 if (lastPri != null) {
 
                     current.setNextNode(lastPri.getNextNode());
-
-                    // Sets currents previous node to be lastPri
-                    current.setPrevNode(lastPri);
-
-                    if (lastPri.getNextNode() != null) {
-                        // Sets currents next node to be lastPri's next node
-                        lastPri.getNextNode().setPrevNode(current);
-                    }
 
                     // Sets lastPri's next node to be current
                     lastPri.setNextNode(current);
@@ -157,12 +138,6 @@ public class LinkedList {
 
                     // Sets current next node to be the head
                     current.setNextNode(getHead());
-
-                    // Sets currents previous node to be null
-                    current.setPrevNode(null);
-
-                    // Sets heads previous node to be current
-                    getHead().setPrevNode(current);
 
                     // set head to be current
                     setHead(current);
@@ -183,11 +158,6 @@ public class LinkedList {
         if (head != null) {
             System.out.println("Time: " + head.getArrivalTime() + "\n" + head.getPassenger().toString()
                     + " has been deleted");
-
-            if (head.getNextNode() != null) {
-                 // Removes the next nodes link to the previus node
-                head.getNextNode().setPrevNode(null);
-            }
 
             // Removes Current head from the list and reassigns the nextnode to e head
             head = head.getNextNode();
