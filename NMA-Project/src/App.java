@@ -70,7 +70,7 @@ public class App {
 
             int removeInt = rand.nextInt(3) + 3;
             for (int i = 0; i < removeInt; i++) {
-                arrivals.removeNode(arrivals.getHead());
+                arrivals.removeNode();
             }
 
             System.out.println("\nRemaining Passengers:\n");

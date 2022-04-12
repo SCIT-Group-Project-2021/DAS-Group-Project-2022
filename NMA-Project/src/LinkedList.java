@@ -42,9 +42,12 @@ public class LinkedList {
 
         temp.setArrivalTime(rand.nextInt(3));
 
+        // If Head is null new node will automatically be assigned as head
         if (head != null) {
 
+            // Checks if generated ID already exsist
             while (unique == false) {
+                // Loops from head to end of the list to check for replicated IDs
                 Node check = getHead();
                 while (check != null) {
                     if (check.getPassenger().getIdNum() == temp.getPassenger().getIdNum()) {
@@ -62,10 +65,13 @@ public class LinkedList {
 
             }
 
+            // Adds new node to the end of the list
             tail.setNextNode(temp);
 
+            // Adds reference to the previous tail of the list
             temp.setPrevNode(tail);
 
+            // Sets new node to be the tail
             tail = temp;
 
         } else {
@@ -78,15 +84,11 @@ public class LinkedList {
 
     }
 
-    public void removePassenger() {
-
-        // TODO add remove passenger, lol "add 'remove'"
-    }
-
     public void printList() {
 
         Node temp = getHead();
 
+        // Loops through the list from hthe head and prints every node
         while (temp != null) {
 
             System.out.println(temp.getPassenger());
@@ -173,14 +175,19 @@ public class LinkedList {
 
     }
 
-    public void removeNode(Node newNode) {
-        Node temp = head;
-        // Node prevNode = null;
-        if (temp != null) {
-            head = temp.getNextNode();
-            // head.setPrevNode(null);
-            System.out.println("Time: " + newNode.getArrivalTime() + "\n" + newNode.getPassenger().toString()
+    public void removeNode() {
+
+        if (head != null) {
+            System.out.println("Time: " + head.getArrivalTime() + "\n" + head.getPassenger().toString()
                     + " has been deleted");
+
+            if (head.getNextNode() != null) {
+                 // Removes the next nodes link to the previus node
+                head.getNextNode().setPrevNode(null);
+            }
+
+            // Rempoves Current head from the list and reassigns the nextnode to e head
+            head = head.getNextNode();
 
         }
     }
